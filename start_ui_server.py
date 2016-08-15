@@ -1,7 +1,7 @@
 import argparse
 from tornado.ioloop import IOLoop
 
-from application import UIServerApplication
+from ui_server.application import UIServerApplication
 
 
 if __name__ == "__main__":
