@@ -10,8 +10,8 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     application = UIServerApplication(
-        static_path='static',
-        template_path='templates'
+        static_path='ui_server/static',
+        template_path='ui_server/templates'
     )
     application.listen(args.port)
     IOLoop.current().start()

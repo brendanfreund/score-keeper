@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="../static/style.css" type="text/css">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Leader Board</title>
+  </head>
+
+  <body>
+    <ul>
+      <li><a class="active" href="#leaderboard">Leader Board</a></li>
+      <li><a href="#players">Players</a></li>
+      <li><a href="#recentrounds">Recent Rounds</a></li>
+    </ul>
+    <h1>1963 Rock Leader Board </h1>
+    <h3 style=font-weight:200><i>“Winning isn’t everything, it’s the only thing.”</i></h3>
+
+    <div style="overflow-y:auto;">
+      <table align="center">
+        <tr>
+          <th>Player</th>
+          <th>Score</th>
+          <th>Date</th>
+        </tr>
+        {% for _round in rounds %}
+        <tr>
+          <td>{{ _round['player_name'] }}</td>
+          <td>{{ _round['score'] }}</td>
+          <td>{{ _round['date'] }}</td>
+        </tr>
+        {% end %}
+      </table>
+    </div>
+  </body>
+</html>

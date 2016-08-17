@@ -30,4 +30,5 @@ class BaseHandler(tornado.web.RequestHandler):
 
 class LeaderBoardHandler(BaseHandler):
     def get(self):
-        self.write("1963 Rock Leader Board")
+        rounds = [{'player_name':'Steph Curry', 'score':9001, 'date':'August 16, 2016'}]
+        self.render("leader_board.html", rounds=rounds)
