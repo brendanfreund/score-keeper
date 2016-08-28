@@ -11,6 +11,13 @@ class Round(BaseModel):
 	finish_time = DateTimeField(null=True)
 	score = IntegerField()
 
+	def get_all_rounds(cls):
+		'''Retrieves all scores in descending order'''
+		try:
+			return Round.select().order_by(Round.score.desc())
+		except:
+			return None
+
 	@classmethod
 	def get_scores_for_player(cls, player):
 		'''Retrieve all scores for a given player'''
@@ -29,3 +36,5 @@ class Round(BaseModel):
 			finish_time=datetime.datetime.utcnow()
 		)
 		return _round
+
+

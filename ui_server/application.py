@@ -4,6 +4,7 @@ import os
 import tornado
 from tornado.web import Application
 from models.base import use_db, db_proxy
+from models.round import Round
 
 class UIServerApplication(Application):
     '''Application object that sets up handlers'''
@@ -30,5 +31,5 @@ class BaseHandler(tornado.web.RequestHandler):
 
 class LeaderBoardHandler(BaseHandler):
     def get(self):
-        rounds = [{'player_name':'Steph Curry', 'score':9001, 'date':'August 16, 2016'}]
+        rounds = Round().get_all_rounds()
         self.render("leader_board.html", rounds=rounds)

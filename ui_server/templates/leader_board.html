@@ -26,9 +26,9 @@
         </tr>
         {% for _round in rounds %}
         <tr>
-          <td>{{ _round['player_name'] }}</td>
-          <td>{{ _round['score'] }}</td>
-          <td>{{ _round['date'] }}</td>
+          <td>{{ _round.player.name }}</td>
+          <td>{{ _round.score }}</td>
+          <td>{{ _round.finish_time }}</td>
         </tr>
         {% end %}
       </table>
